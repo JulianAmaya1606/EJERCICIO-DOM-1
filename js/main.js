@@ -78,6 +78,10 @@
        const ultimo =  contenedor.lastElementChild; 
        ultimo.remove()
     }
+    function color () {
+        newC = prompt ("ingrese el nuevo color ")
+        figure.style.background = newC
+    }
 
 
 
@@ -115,6 +119,8 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnChangeParagraph').addEventListener('click',parrafo)
     document.getElementById('btnAddParagraph').addEventListener('click',agregarP)
     document.getElementById('btnRemoveParagraph').addEventListener('click',removeP)
+    document.getElementById('btnHexColor').addEventListener('click',color)
+
 
 
 
