@@ -65,6 +65,12 @@
         p = document.getElementById('mainParagraph')
         p.innerText = nuevoP
     }
+    function agregarP (){
+    const texto = prompt("Escribe el contenido del nuevo párrafo:");
+        const nuevoP = document.createElement("p");
+        nuevoP.innerText = texto;
+        document.querySelector(".texts").appendChild(nuevoP);
+    }
 
 
 
@@ -101,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnMoveRight').addEventListener('click',derecha)
     document.getElementById('btnChangeTitle').addEventListener('click',titulo)
     document.getElementById('btnChangeParagraph').addEventListener('click',parrafo)
-    document.getElementById('mainParagraph').addEventListener('click',parrafo)
+    document.getElementById('btnAddParagraph').addEventListener('click',agregarP)
 
 
 
