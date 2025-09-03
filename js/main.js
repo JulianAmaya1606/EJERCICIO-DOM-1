@@ -38,6 +38,11 @@
 
     }
 
+    function arriba() {
+        figure.style.transition = "transform 0.7s ease";
+        figure.style.transform = "translateY(-150px)"; 
+    }
+
 
 
 
@@ -69,6 +74,10 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnCircle').addEventListener('click',circulo)
     document.getElementById('btnStar').addEventListener('click',estrella)
     document.getElementById('btnGif').addEventListener('click',gif)
+    document.getElementById('btnAnim').addEventListener('click',animation)
+    document.getElementById('btnMoveUp').addEventListener('click',arriba)
+    document.getElementById('btnAnim').addEventListener('click',animation)
+    document.getElementById('btnAnim').addEventListener('click',animation)
     document.getElementById('btnAnim').addEventListener('click',animation)
 
 
