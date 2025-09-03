@@ -57,10 +57,14 @@
 
     function titulo (){
         nuevotitulo = prompt("ingrese el nuevo titulo")
-        texto = document.getElementById('tittle').innerText= nuevotitulo
-        
+        texto = document.getElementById('mainTitle')
+        texto.innerText = nuevotitulo
     }
-
+    function parrafo (){
+        nuevoP = prompt("ingrese el nuevo parrafo")
+        p = document.getElementById('mainParagraph')
+        p.innerText = nuevoP
+    }
 
 
 
@@ -96,6 +100,8 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnMoveLeft').addEventListener('click',izquierda)
     document.getElementById('btnMoveRight').addEventListener('click',derecha)
     document.getElementById('btnChangeTitle').addEventListener('click',titulo)
+    document.getElementById('btnChangeParagraph').addEventListener('click',parrafo)
+    document.getElementById('mainParagraph').addEventListener('click',parrafo)
 
 
 
