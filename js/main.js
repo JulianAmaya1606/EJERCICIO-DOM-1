@@ -69,9 +69,15 @@
     const texto = prompt("Escribe el contenido del nuevo párrafo:");
         const nuevoP = document.createElement("p");
         nuevoP.innerText = texto;
-        document.querySelector(".texts").appendChild(nuevoP);
+        div=document.getElementById("extraParagraphs")
+        div.appendChild(nuevoP);
     }
 
+    function removeP(){
+         const contenedor = document.getElementById("extraParagraphs");
+       const ultimo =  contenedor.lastElementChild; 
+       ultimo.remove()
+    }
 
 
 
@@ -108,6 +114,8 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnChangeTitle').addEventListener('click',titulo)
     document.getElementById('btnChangeParagraph').addEventListener('click',parrafo)
     document.getElementById('btnAddParagraph').addEventListener('click',agregarP)
+    document.getElementById('btnRemoveParagraph').addEventListener('click',removeP)
+
 
 
 
