@@ -42,6 +42,10 @@
         figure.style.transition = "transform 0.7s ease";
         figure.style.transform = "translateY(-150px)"; 
     }
+        function abajo(){
+            figure.style.transition = "transform 0.7s ease";
+            figure.style.transform = "translateY(150px)";
+        }
 
 
 
@@ -76,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnGif').addEventListener('click',gif)
     document.getElementById('btnAnim').addEventListener('click',animation)
     document.getElementById('btnMoveUp').addEventListener('click',arriba)
-    document.getElementById('btnAnim').addEventListener('click',animation)
+    document.getElementById('btnMoveDown').addEventListener('click',abajo)
     document.getElementById('btnAnim').addEventListener('click',animation)
     document.getElementById('btnAnim').addEventListener('click',animation)
 
