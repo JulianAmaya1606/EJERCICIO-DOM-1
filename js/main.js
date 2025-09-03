@@ -108,8 +108,29 @@
         }
     }
 
+function cambiarImg() {
+    let imagenes = ["../img/imagen.jpg", "../img/imagen2.jpg", "../img/imagen3.jpg"];
+    const img = document.getElementById("mainImage"); // tu <img>
+    let actual = img.getAttribute("src"); // src actual
+    let siguiente = imagenes[0]; // por defecto la primera
+
+    imagenes.forEach((imagen, index) => {
+        if (actual === imagen) { 
+            // si no es la última imagen
+            if (index < imagenes.length - 1) {
+                siguiente = imagenes[index + 1];
+            } else {
+                // si es la última, volver a la primera
+                siguiente = imagenes[0];
+            }
+        }
+    });
+
+    img.setAttribute("src", siguiente); // cambiar la imagen
+}
 
 
+    
 
 
 
@@ -146,6 +167,8 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnRemoveParagraph').addEventListener('click',removeP)
     document.getElementById('btnHexColor').addEventListener('click',color)
     document.getElementById('btnChooseFigure').addEventListener('click',elegir)
+    document.getElementById('btnChangeImageNext').addEventListener('click',cambiarImg)
+
 
 
 
