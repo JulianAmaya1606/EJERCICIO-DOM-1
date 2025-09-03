@@ -26,9 +26,17 @@
         figure.style.backgroundImage = "url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3b2lrbTgwbWFrMXNqY3JjeWRqZjIzZTh5d253b2o0bG90NTVic3B0dyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/zbyE0sDeW4z3W/giphy.gif')";
         figure.style.backgroundPosition = "center";
      }
-     function animation(){
+    function animation(){
+        const figure = document.getElementById('figure');
+        figure.style.transition = "transform 1s ease";
+        
+        if (figure.style.transform === "rotate(360deg)") {
+            figure.style.transform = "rotate(0deg)";
+        } else {
+            figure.style.transform = "rotate(360deg)";
+        }
 
-     }
+    }
 
 
 
@@ -61,6 +69,8 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnCircle').addEventListener('click',circulo)
     document.getElementById('btnStar').addEventListener('click',estrella)
     document.getElementById('btnGif').addEventListener('click',gif)
+    document.getElementById('btnAnim').addEventListener('click',animation)
+
 
 
 
