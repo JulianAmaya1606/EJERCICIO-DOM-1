@@ -50,12 +50,16 @@
         figure.style.transition = "transform 0.7s ease";
         figure.style.transform = "translatex(-150px)";
     }
-        function derecha(){
+    function derecha(){
         figure.style.transition = "transform 0.7s ease";
         figure.style.transform = "translatex(150px)";
     }
 
-
+    function titulo (){
+        nuevotitulo = prompt("ingrese el nuevo titulo")
+        texto = document.getElementById('tittle').innerText= nuevotitulo
+        
+    }
 
 
 
@@ -91,6 +95,8 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnMoveDown').addEventListener('click',abajo)
     document.getElementById('btnMoveLeft').addEventListener('click',izquierda)
     document.getElementById('btnMoveRight').addEventListener('click',derecha)
+    document.getElementById('btnChangeTitle').addEventListener('click',titulo)
+
 
 
 
