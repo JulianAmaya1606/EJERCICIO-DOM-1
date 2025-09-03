@@ -56,12 +56,12 @@
     }
 
     function titulo (){
-        nuevotitulo = prompt("ingrese el nuevo titulo")
+       let nuevotitulo = prompt("ingrese el nuevo titulo")
         texto = document.getElementById('mainTitle')
         texto.innerText = nuevotitulo
     }
     function parrafo (){
-        nuevoP = prompt("ingrese el nuevo parrafo")
+        let nuevoP = prompt("ingrese el nuevo parrafo")
         p = document.getElementById('mainParagraph')
         p.innerText = nuevoP
     }
@@ -74,13 +74,38 @@
     }
 
     function removeP(){
-         const contenedor = document.getElementById("extraParagraphs");
+        const contenedor = document.getElementById("extraParagraphs");
        const ultimo =  contenedor.lastElementChild; 
        ultimo.remove()
     }
     function color () {
-        newC = prompt ("ingrese el nuevo color ")
+      let newC = prompt ("ingrese el nuevo color #")
         figure.style.background = newC
+    }
+    function elegir (){
+        let figura = prompt ("elija entre (circulo,estrella o cuadrado)")
+        switch (figura) {
+            case "circulo":
+                figure.style.borderRadius = "50%"
+                break;
+            case "estrella":
+                figure.style.clipPath = "polygon(\
+                50% 0%,\
+                61% 35%,\
+                98% 35%,\
+                68% 57%,\
+                79% 91%,\
+                50% 70%,\
+                21% 91%,\
+                32% 57%,\
+                2% 35%,\
+                39% 35%\
+            )";
+                break;
+            case "cuadrado":
+                figure 
+                break;
+        }
     }
 
 
@@ -120,6 +145,8 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnAddParagraph').addEventListener('click',agregarP)
     document.getElementById('btnRemoveParagraph').addEventListener('click',removeP)
     document.getElementById('btnHexColor').addEventListener('click',color)
+    document.getElementById('btnChooseFigure').addEventListener('click',elegir)
+
 
 
 
