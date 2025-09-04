@@ -1,9 +1,10 @@
     const figure = document.getElementById('figure')
+    figure.style.background = "yellow";
     
     function circulo(){
  
            figure.style.borderRadius = "50%";
-            figure.style.background = "red";
+
      }
      function estrella(){
      
@@ -176,7 +177,7 @@ function cambiarImgAtras() {
         enl.setAttribute("target", "_blank");
     }   
     function quitEnlace(){
-        let enlace = document.getElementById('mainLink');
+        let enlace = document.getElementById('mainLink')
         enlace.removeAttribute("href");
     }
 

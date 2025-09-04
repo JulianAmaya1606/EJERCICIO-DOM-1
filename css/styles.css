@@ -44,14 +44,14 @@ body {
 button {
   padding: 14px 20px;
   border: none;
-  background: #013889;
+  background: #2a8dac;
   color: #fff;
   border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
   min-width: 160px;
   margin: 16px;
-  border: 2px solid #013889;
+  border: 2px solid #a3b5d1;
 
 }
 
@@ -75,7 +75,6 @@ button:hover {
 
 .right h2 {
   margin-bottom: 20px;
-  
 }
 
 /* Figura base */
