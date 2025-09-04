@@ -175,7 +175,11 @@ function cambiarImgAtras() {
         let enl = document.getElementById('mainLink');
         enl.setAttribute("target", "_blank");
     }   
-      
+    function quitEnlace(){
+        let enlace = document.getElementById('mainLink');
+        enlace.removeAttribute("href");
+    }
+
 
 
 
@@ -218,6 +222,7 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnChangeAlt').addEventListener('click',cambiarAlt)
     document.getElementById('btnChangeLink').addEventListener('click',enlace)
     document.getElementById('btnOpenLink').addEventListener('click',openEnlace)
+    document.getElementById('btnDisableLink').addEventListener('click',quitEnlace)
 
 
 
