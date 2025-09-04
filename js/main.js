@@ -154,7 +154,7 @@ function cambiarImgAtras() {
     });
 
     img.setAttribute("src", anterior); // cambiar la imagen
-}
+    }
 
     function alternarImagen() {
         const img = document.getElementById("mainImage");
@@ -166,7 +166,11 @@ function cambiarImgAtras() {
         img.setAttribute("alt", newAlt )
     }
 
-    
+    function enlace(){
+        let enl = document.getElementById('mainLink')
+        let newE = prompt("ingrese el nuevo enlace")
+        enl.setAttribute("href", newE)
+    }        
 
 
 
@@ -207,6 +211,7 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnChangeImagePrev').addEventListener('click',cambiarImgAtras)
     document.getElementById('btnToggleImage').addEventListener('click',alternarImagen)
     document.getElementById('btnChangeAlt').addEventListener('click',cambiarAlt)
+    document.getElementById('btnChangeLink').addEventListener('click',enlace)
 
 
 
