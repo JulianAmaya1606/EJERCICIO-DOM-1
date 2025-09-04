@@ -160,6 +160,11 @@ function cambiarImgAtras() {
         const img = document.getElementById("mainImage");
         img.classList.toggle("none")
     }
+    function cambiarAlt() {
+        newAlt = prompt("ingrese el nuevo alt")
+        const img = document.getElementById('mainImage')
+        img.setAttribute("alt", newAlt )
+    }
 
     
 
@@ -201,6 +206,7 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnChangeImageNext').addEventListener('click',cambiarImg)
     document.getElementById('btnChangeImagePrev').addEventListener('click',cambiarImgAtras)
     document.getElementById('btnToggleImage').addEventListener('click',alternarImagen)
+    document.getElementById('btnChangeAlt').addEventListener('click',cambiarAlt)
 
 
 
