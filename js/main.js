@@ -156,6 +156,11 @@ function cambiarImgAtras() {
     img.setAttribute("src", anterior); // cambiar la imagen
 }
 
+    function alternarImagen() {
+        const img = document.getElementById("mainImage");
+        img.classList.toggle("none")
+    }
+
     
 
 
@@ -195,6 +200,8 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnChooseFigure').addEventListener('click',elegir)
     document.getElementById('btnChangeImageNext').addEventListener('click',cambiarImg)
     document.getElementById('btnChangeImagePrev').addEventListener('click',cambiarImgAtras)
+    document.getElementById('btnToggleImage').addEventListener('click',alternarImagen)
+
 
 
 
