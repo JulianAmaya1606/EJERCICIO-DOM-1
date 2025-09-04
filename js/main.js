@@ -170,7 +170,12 @@ function cambiarImgAtras() {
         let enl = document.getElementById('mainLink')
         let newE = prompt("ingrese el nuevo enlace")
         enl.setAttribute("href", newE)
-    }        
+    }  
+    function openEnlace() {
+        let enl = document.getElementById('mainLink');
+        enl.setAttribute("target", "_blank");
+    }   
+      
 
 
 
@@ -212,6 +217,7 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnToggleImage').addEventListener('click',alternarImagen)
     document.getElementById('btnChangeAlt').addEventListener('click',cambiarAlt)
     document.getElementById('btnChangeLink').addEventListener('click',enlace)
+    document.getElementById('btnOpenLink').addEventListener('click',openEnlace)
 
 
 
