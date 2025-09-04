@@ -26,17 +26,22 @@
         figure.style.backgroundImage = "url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3b2lrbTgwbWFrMXNqY3JjeWRqZjIzZTh5d253b2o0bG90NTVic3B0dyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/zbyE0sDeW4z3W/giphy.gif')";
         figure.style.backgroundPosition = "center";
      }
-    function animation(){
-        const figure = document.getElementById('figure');
-        figure.style.transition = "transform 1s ease";
-        
-        if (figure.style.transform === "rotate(360deg)") {
-            figure.style.transform = "rotate(0deg)";
-        } else {
-            figure.style.transform = "rotate(360deg)";
-        }
+        function animation() {
+            const figure = document.getElementById('figure');
 
-    }
+            // Crear un style dinámico para el keyframes
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes girar {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Aplicar la animación al elemento
+            figure.style.animation = "girar 2s linear infinite";
+        }
 
     function arriba() {
         figure.style.transition = "transform 0.7s ease";
@@ -103,13 +108,14 @@
             )";
                 break;
             case "cuadrado":
-                figure 
+                figure.style.borderRadius = "0"; // cuadrado perfecto
+                figure.style.clipPath = "none";
                 break;
         }
     }
 
 function cambiarImg() {
-    let imagenes = ["../img/imagen.jpg", "../img/imagen2.jpg", "../img/imagen3.jpg"];
+    let imagenes = ["img/imagen.jpg", "img/imagen2.jpg", "img/imagen3.jpg"];
     const img = document.getElementById("mainImage"); // tu <img>
     let actual = img.getAttribute("src"); // src actual
     let siguiente = imagenes[0]; // por defecto la primera
@@ -129,6 +135,26 @@ function cambiarImg() {
     img.setAttribute("src", siguiente); // cambiar la imagen
 }
 
+function cambiarImgAtras() {
+    let imagenes = ["img/imagen.jpg", "img/imagen2.jpg", "img/imagen3.jpg"];
+    const img = document.getElementById("mainImage"); // tu <img>
+    let actual = img.getAttribute("src"); // src actual
+    let anterior = imagenes[imagenes.length - 1]; // por defecto la última imagen
+
+    imagenes.forEach((imagen, index) => {
+        if (actual === imagen) { 
+            // si no es la primera imagen
+            if (index > 0) {
+                anterior = imagenes[index - 1];
+            } else {
+                // si es la primera, ir a la última
+                anterior = imagenes[imagenes.length - 1];
+            }
+        }
+    });
+
+    img.setAttribute("src", anterior); // cambiar la imagen
+}
 
     
 
@@ -168,6 +194,7 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('btnHexColor').addEventListener('click',color)
     document.getElementById('btnChooseFigure').addEventListener('click',elegir)
     document.getElementById('btnChangeImageNext').addEventListener('click',cambiarImg)
+    document.getElementById('btnChangeImagePrev').addEventListener('click',cambiarImgAtras)
 
 
 
